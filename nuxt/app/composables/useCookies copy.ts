@@ -45,7 +45,7 @@ const addOrRemoveStylesheet = (id: string, href: string, active: boolean) => {
 }
 
 /* ------------------------------- Composable ------------------------------- */
-export function useCookies() {
+export function useCookiess() {
   // state
   const isModalCookie = ref(false)
   const isMoreOptions = ref(false)
