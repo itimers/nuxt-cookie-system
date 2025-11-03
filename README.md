@@ -523,7 +523,7 @@ onMounted(() => {
 MIT License - Feel free to use for commercial and non-commercial projects.
 
 ```
-Copyright (c) 2025 IT Timers
+Copyright (c) 2025 ITimers
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -536,7 +536,7 @@ copies of the Software.
 
 ## 👨‍💻 Author
 
-**IT Timers**
+**ITimers**
 - 🌐 GitHub: [@itimers](https://github.com/itimers)
 
 ---
@@ -565,6 +565,6 @@ For questions and support:
 
 ### ⭐ If you like the project, leave a star! ⭐
 
-Made with ❤️ by IT Timers
+Made with ❤️ by ITimers
 
 </div>

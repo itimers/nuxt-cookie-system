@@ -672,7 +672,7 @@ Ovaj projekat je licenciran pod **MIT Licencom**.
 ```
 MIT Licenca
 
-Copyright (c) 2025 IT Timers
+Copyright (c) 2025 ITimers
 
 Dozvola se ovim daje, besplatno, svakom licu koje dobije kopiju
 ovog softvera i povezanih fajlova dokumentacije ("Softver"), da se
@@ -697,7 +697,7 @@ IZ ILI U VEZI SA SOFTVEROM ILI UPOTREBOM ILI DRUGIM POSLOVIMA U SOFTVERU.
 
 ## 👨‍💻 Autor
 
-**IT Timers**
+**ITimers**
 
 - 🌐 Vebsajt: [Uskoro]
 - 📧 Email: [Kontakt Informacije]
@@ -810,7 +810,7 @@ Posebne zahvalnice:
 
 <div align="center">
 
-**Napravljeno sa ❤️ od strane IT Timers**
+**Napravljeno sa ❤️ od strane ITimers**
 
 ⭐ **Dodajte zvezdu ovom repo-u** ako vam je koristan!
 
