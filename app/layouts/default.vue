@@ -829,6 +829,7 @@ p {
 }
  .toggle-cookies-btn {
     margin-left: 10px;
+	margin-top: 10px;
     padding: 5px 14px 5px 10px;
     background: transparent;
     color: var(--link-active);
