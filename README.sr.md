@@ -4,6 +4,8 @@
 
 **📖 Srpska verzija | [English](README.md)**
 
+**🌐 [Live Demo](https://itimers.github.io/nuxt-cookie-system/)**
+
 ---
 
 ## ✨ O Projektu

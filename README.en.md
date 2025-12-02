@@ -2,6 +2,12 @@
 
 > 🌐 A modern, customizable, and GDPR-compliant cookie consent system built with Nuxt 3.
 
+**📖 [Srpska verzija](README.sr.md) | English**
+
+**🌐 [Live Demo](https://itimers.github.io/nuxt-cookie-system/)**
+
+---
+
 ## ✨ About the Project
 
 This project represents a **professional cookie consent system** developed in **Nuxt 3** with **TypeScript** and **composable architecture**. The system supports **granular cookie control**, **temporary staging**, **protected cookies**, **conditional loader**, and many other advanced features for GDPR compliance.
