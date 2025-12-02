@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+//@ts-ignore
+const isProd = process.env.NODE_ENV === 'nuxt-cookie-system'
+const base = isProd ? '/nuxt-cookie-system/' : '/'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -36,8 +40,15 @@ export default defineNuxtConfig({
     preset: 'github-pages',
   },
   app: {
-    baseURL: import.meta.env.PROD ? '/nuxt-cookie-system/' : '/',
+    baseURL: base,
     head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: `${base}favicon.ico`,
+        },
+      ],
       script: [
         {
           innerHTML: `
