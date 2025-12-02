@@ -7,6 +7,8 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: import.meta.env.PROD ? '/nuxt-cookie-system/' : '/',
+    buildAssetsDir: '/nuxt-cookie-system/_nuxt/',
+    cdnURL: import.meta.env.PROD ? '/nuxt-cookie-system/' : undefined,
     head: {
       script: [
         {
