@@ -1,4 +1,4 @@
-name: Deploy Nuxt site to GitHub Pages
+name: Deploy nuxt-cookie-system to GitHub Pages
 
 on:
   push:
@@ -26,7 +26,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22.14.0"
-          # NEMA cache: npm jer nemamo lock fajl
 
       - name: 📦 Install dependencies
         run: npm install
@@ -34,29 +33,13 @@ jobs:
       - name: 🏗️ Generate static site
         run: npm run generate
 
-      - name: 🔎 Detect output dir
-        id: detect
-        shell: bash
-        run: |
-          if [ -d ".output/public" ]; then
-            echo "dir=.output/public" >> "$GITHUB_OUTPUT"
-          elif [ -d "dist/public" ]; then
-            echo "dir=dist/public" >> "$GITHUB_OUTPUT"
-          elif [ -d "dist" ]; then
-            echo "dir=dist" >> "$GITHUB_OUTPUT"
-          else
-            echo "❌ Build output not found" >&2
-            ls -R
-            exit 1
-          fi
-
-      - name: 📋 List output (debug)
-        run: ls -la "${{ steps.detect.outputs.dir }}"
+      - name: 📋 List .output/public (debug)
+        run: ls -R .output/public
 
       - name: ⬆️ Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.detect.outputs.dir }}
+          path: .output/public
 
   deploy:
     environment:
