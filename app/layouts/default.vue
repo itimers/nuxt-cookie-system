@@ -142,10 +142,7 @@ onMounted(() => {
 
 </script>
 <template>
-    <div class="page-loader active">
-        <p>Loading...</p>
-    </div>
-    <div>
+    <div class="app">
         <div v-if="is('localstorage')" style="padding: 20px; background: #f0f9ff; border: 2px solid #3bbbc9; border-radius: 8px; margin: 20px;">
             <h3 style="color: #3bbbc9; margin-bottom: 10px;">✅ Local Storage Cookie is Active</h3>
             <p style="color: #666; margin-bottom: 15px;">
@@ -171,7 +168,6 @@ onMounted(() => {
             🍪 Cookies
         </button>
         <NuxtPage />
-
         <ClientOnly>
             <Transition name="goup" mode="out-in">
         <div class="cookies" v-if="!isCookieDecided || toggleCookiesMenu" :class="{ active: isCustomizing }">
@@ -255,20 +251,34 @@ onMounted(() => {
     padding: 0;
     box-sizing: border-box;
 }
-
+.app {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden auto;
+	justify-content: flex-start;
+	align-items: flex-start;
+	scrollbar-gutter: stable;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 20px 50px 20px;
+}
 html {
     position: relative;
     width: 100%;
     height: 100%;
+	overflow: hidden;
 }
 
 body {
     position: relative;
+	z-index: 1;
     width: 100%;
     height: 100%;
     color: var(--font);
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+	overflow: hidden;
 }
 
 button {

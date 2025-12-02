@@ -49,25 +49,47 @@ export default defineNuxtConfig({
           href: `${base}favicon.ico`,
         },
       ],
+      style: [
+        {
+          innerHTML: `.loader-spinner{position:relative;width:50px;height:50px;margin:0 auto 15px}.loader-spinner::before,.loader-spinner::after{content:'';position:absolute;top:0;left:0;width:50px;height:50px;border-radius:50%;box-sizing:border-box}.loader-spinner::before{border:3px solid rgba(59,187,201,0.2)}.loader-spinner::after{border:3px solid transparent;border-top-color:#3bbbc9;border-right-color:#3bbbc9;animation:1s linear infinite spin}.page-loader.active{opacity:1;visibility:visible}.page-loader{opacity:0;pointer-events:none;position:absolute;inset:0;background:var(--loader-bg);display:flex;justify-content:center;align-items:center;z-index:9000;visibility:hidden;transition:opacity .3s,visibility .3s;overflow:hidden}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}`,
+          key: 'critical-loader-css',
+        },
+      ],
       script: [
         {
           innerHTML: `
             (function() {
-              var cookies = document.cookie.split(';');
-              var cookieAccepted = cookies.find(function(c) { return c.trim().startsWith('cookie-accepted='); });
-              var status = cookieAccepted ? cookieAccepted.split('=')[1] : 'waiting';
-              
-              var style = document.createElement('style');
-              if (status === 'accepted') {
-                style.innerHTML = '.page-loader { display: flex; }';
-              } else {
-                style.innerHTML = '.page-loader { display: none; }';
+              function getCookie(name) {
+                var value = '; ' + document.cookie;
+                var parts = value.split('; ' + name + '=');
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return undefined;
               }
-              document.head.appendChild(style);
+
+              function initLoader() {
+                var shouldShow = getCookie('cookie-accepted') === 'accepted';
+                if (shouldShow && !document.querySelector('.page-loader')) {
+                  var loader = document.createElement('div');
+                  loader.className = 'page-loader active';
+                  loader.innerHTML = '<div class="loader-overlay"></div><div class="loader-content"><div class="loader-spinner"></div></div>';
+                  document.body.appendChild(loader);
+                }
+              }
+
+              // Pokreni nakon hydration-a
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLoader);
+              } else {
+                // Ako je već učitan, koristi requestAnimationFrame da sačeka hydration
+                requestAnimationFrame(function() {
+                  requestAnimationFrame(initLoader);
+                });
+              }
             })();
           `,
           type: 'text/javascript',
-        }
+          tagPosition: 'bodyOpen',
+        },
       ]
     }
   }
