@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 //@ts-ignore
-const isProd = process.env.NODE_ENV === 'nuxt-cookie-system'
+const isProd = process.env.NODE_ENV === 'production'
 const base = isProd ? '/nuxt-cookie-system/' : '/'
 
 export default defineNuxtConfig({
